@@ -12,15 +12,15 @@ def count_chars(text):
             chars_dict[char] = 1
     return chars_dict
 
-def sort_on(items):
+def sort_on(items: tuple[str, int]):
     return items["num"]
-
+    
 def sorted_dicts(dict_input):
     dict_list = []
     for char in dict_input:
         num = dict_input[char]
         dict_rev = {"char": char, "num": num}
         if char.isalpha() == True:
-            dict_list.append(dict_rev) 
-    dict_list.sort(reverse=True, key=sort_on)
-    return dict_list
+            dict_list.append(dict_rev)
+    sorted_list = sorted(dict_list, reverse=True, key=sort_on)
+    return sorted_list
